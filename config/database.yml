@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 6743
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Crud_App
+
+test:
+  <<: *default
+  database: Crud_App
+
+production:
+  <<: *default
+  database: Crud_App
+  username: postgres
+  password: <%= ENV['PIXEL_PLACE_DATABASE_PASSWORD'] %>
